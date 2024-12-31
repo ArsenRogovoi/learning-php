@@ -11,7 +11,7 @@ $dbFile = "db.json";
 switch ($_SERVER['REQUEST_METHOD']) {
     case "POST":
         $data = json_decode(file_get_contents('php://input'), true);
-
+        $data = create($data);
         responseData("success", $data);
         break;
     case "GET":
